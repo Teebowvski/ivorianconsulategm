@@ -1,0 +1,112 @@
+﻿<style>
+    .navbar
+   {
+        padding: 0 !important;
+      
+    }
+
+    .navbar-brand
+  {
+        padding: 5px !important;
+        height: 100px !important;
+    }
+</style>
+
+
+<!-- Topbar Section Start -->
+<div class="topbar">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <!-- Topbar Contact Information Start -->
+                <div class="topbar-contact-info">
+                    <ul>
+                        <li><img src="~/images/icon-watch.svg" alt=""> <span>Working Hours:</span> 09:00am to 05:00pm</li>
+                        <li><img src="~/images/icon-mail.svg" alt=""> <span>Email:</span><a target="_blank" href="mailto:info@ivorianconsulategm.org">info@ivorianconsulategm.org</a></li>
+                    </ul>
+                </div>
+                <!-- Topbar Contact Information End -->
+            </div>
+
+            <div class="col-lg-4">
+                <!-- Header Social Icons Start -->
+                <div class="topbar-social-icons">
+                    <ul>
+                        <li><a target="_blank" href="https://instagram.com/Ivorianconsulategm"><i class="fa-brands fa-instagram"></i></a></li>
+                        <li><a target="_blank" href="http://www.facebook.com/Ivorianconsulategm"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a target="_blank" href="http://linkedin.com/Ivorianconsulategm"><i class="fa-brands fa-linkedin"></i></a></li>
+                        <li><a target="_blank" href="http://www.twitter.com/Ivorianconsulategm"><i class="fa-brands fa-twitter"></i></a></li>
+                    </ul>
+                </div>
+                <!-- Header Social Icons End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Topbar Section End -->
+<!-- Header Start -->
+<header class="main-header">
+    <div class="header-sticky">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <!-- Logo Start -->
+                <a class="navbar-brand d-flex align-items-center justify-content-center"
+                   asp-controller="Home" asp-action="Index">
+                    <img src="~/img/logo.jpg"
+                         style="height: 70px; width: auto; display: block;"
+                         alt="Logo">
+                </a>
+                <!-- Logo End -->
+                <!-- Main Menu Start -->
+                <div class="collapse navbar-collapse main-menu">
+                    <div class="nav-menu-wrapper">
+                        <ul class="navbar-nav mr-auto" id="menu">
+                            <li class="nav-item ">
+                                <a class="nav-link" asp-controller="Home" asp-action="Index">Home</a>
+  
+                            </li>
+                            <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="About"> About </a>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Services">Services</a></li>
+                                <li class="nav-item submenu">
+                                    <a class="nav-link" href="#">Press & Events</a>
+                                    <ul>
+                                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Statements">Official Statements</a></li>
+                                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Newslist">Press</a></li>
+                                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Events"> Events</a></li>
+                                    </ul>
+                                </li>
+ 
+
+                                <li class="nav-item submenu">
+                                    <a class="nav-link" href="#">Pages</a>
+                                    <ul>
+                                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Invest">Invest in Cote d'Ivoire</a></li>
+                                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Events"> Events</a></li>
+                                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Gallery"> Gallery</a></li>
+                                        <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Vlogs">Vlogs</a></li>
+                              
+                                    </ul>
+                                </li>
+                                <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Contact">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <!-- Contact Now Box Start -->
+                        <div class="contact-now-box d-inline-flex">
+                            <div class="icon-box">
+                                <img src="~/images/icon-phone.svg" alt="">
+                            </div>
+                            <div class="contact-now-box-content">
+                                <p>call us now</p>
+                                <h3><a href="tel:+220 2467777">+220 2467777</a></h3>
+                            </div>
+                        </div>
+                        <!-- Contact Now Box End -->
+                    </div>
+                    <!-- Main Menu End -->
+                    <div class="navbar-toggle"></div>
+                </div>
+            </nav>
+            <div class="responsive-menu"></div>
+        </div>
+    </header>
+<!-- Header End -->

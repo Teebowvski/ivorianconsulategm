@@ -1,0 +1,111 @@
+﻿@using Ivory_Coast.ViewModels
+@model HomeViewModel
+
+@{
+    // Get current route from Context
+    var currentPath = Context.Request.Path.ToString();
+    var segments = currentPath.TrimStart('/').Split('/', StringSplitOptions.RemoveEmptyEntries);
+
+    // Set Controller and Action properties
+    var Controller = segments.Length > 0 ? segments[0] : "Home";
+    var Action = segments.Length > 1 ? segments[1] : "Index";
+    var ReturnUrl = currentPath;
+}
+<div class="cta-box">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-5">
+                <!-- CTA Box Content Start -->
+                <div class="cta-box-content">
+
+                    <!-- Section Title Start -->
+                    <div class="section-title dark-section">
+                        <h3 class="wow fadeInUp">contact the consulate</h3>
+                        <h2 class="text-anime-style-3" data-cursor="-opaque">How Can We Assist You?</h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">For consular enquiries, information or assistance, our office is available to help.</p>
+                    </div>
+                    <!-- Section Title End -->
+                    <!-- CTA Box Button Start -->
+                    <div class="cta-box-btn wow fadeInUp" data-wow-delay="0.4s">
+                        <a asp-controller="Home" asp-action="Contact" class="btn-default">contact us</a>
+                        <span>or</span>
+                        <a href="#" class="cta-btn">visa enquiries</a>
+                    </div>
+                    <!-- CTA Box Button End -->
+
+                </div>
+                <!-- CTA Box Content End -->
+            </div>
+
+            <div class="col-lg-7">
+                <!-- CTA Form End -->
+                <div class="contact-form cta-form">
+
+                    <!-- CTA Box Title Start -->
+                    <div class="cta-box-title">
+                        <h2 class="text-anime-style-3" data-cursor="-opaque">Send us an enquiry</h2>
+                    </div>
+                    <!-- CTA Box Title End -->
+                    <!-- CTA Form Start -->
+                    <form id="contact" asp-controller="Home" asp-action="SendMail" method="post" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.25s">
+                        <div class="row">
+                            <input type="hidden" name="Email.Controller" value="@Controller" />
+                            <input type="hidden" name="Email.Action" value="@Action" />
+                            <input type="hidden" name="Email.ReturnUrl" value="@ReturnUrl" />
+                            <div class="form-group col-md-6 mb-4">
+                                <input type="text" name="Email.FirstName" class="form-control" id="FirstName" placeholder="First Name" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                            <div class="form-group col-md-6 mb-4">
+                                <input type="text" name="Email.LastName" class="form-control" id="LastName" placeholder="Last Name" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group col-md-12 mb-4">
+                                <input type="text" name="Email.Subject" class="form-control" id="subject" placeholder="Email subject" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4">
+                                <input type="email" name="Email.Email" class="form-control" id="email" placeholder="Your Email" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4">
+                                <input type="tel" name="Email.Phone" class="form-control" id="phone" placeholder="Your Phone" required>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            
+                            <div class="form-group col-md-6 mb-4 " hidden>
+                                <input type="text" name="Email.FaxNumber" class="form-control" id="FaxNumber" placeholder="Your FaxNumber" >
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group col-md-6 mb-4 " hidden>
+                                <input type="text" name="Email.Website" class="form-control" id="Website" placeholder="Your Website" >
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="form-group col-md-12 mb-5">
+                                <textarea name="Email.Message" class="form-control" id="message" rows="4" placeholder="How may we assist you?"></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <button type="submit" class="btn-default">send enquiry</button>
+                                <div id="msgSubmit" class="h3 hidden"></div>
+                            </div>
+
+                        </div>
+                    </form>
+                    <!-- CTA Form End -->
+
+                </div>
+                <!-- CTA Form Start -->
+            </div>
+
+        </div>
+    </div>
+</div>

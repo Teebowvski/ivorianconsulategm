@@ -1,0 +1,124 @@
+﻿
+@using Ivory_Coast.ViewModels
+@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Tourist Visa";
+}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="page-header-box">
+                    <h1 class="text-anime-style-3" data-cursor="-opaque">Tourist Visa</h1>
+                    <nav class="wow fadeInUp">
+                        <ol class="breadcrumb">
+                           <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">home</a></li>
+                            <li class="breadcrumb-item"><a href="/Services/Visa-Travel-Information">Visa &amp; Travel Information</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Tourist Visa</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="our-scrolling-ticker customer-benefit-ticker">
+    <div class="scrolling-ticker-box">
+        <div class="scrolling-content">
+            <span><img src="~/images/asterisk-icon.svg" alt="">Discover the Beauty and Rich Culture of Côte d'Ivoire</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Experience the Warm Hospitality of the Ivorian People</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Explore Abidjan, Beautiful Beaches and Scenic Landscapes</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Your Next Unforgettable Journey Begins in Côte d'Ivoire</span>
+        </div>
+
+        <div class="scrolling-content">
+            <span><img src="~/images/asterisk-icon.svg" alt="">Discover the Beauty and Rich Culture of Côte d'Ivoire</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Experience the Warm Hospitality of the Ivorian People</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Explore Abidjan, Beautiful Beaches and Scenic Landscapes</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Your Next Unforgettable Journey Begins in Côte d'Ivoire</span>
+        </div>
+    </div>
+</div>
+<!-- Page Service Single Start -->
+<div class="page-service-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- Service Sidebar Start -->
+                <partial name="_VisaSideBar" />
+                <!-- Service Sidebar End -->
+            </div>
+
+            <div class="col-lg-8">
+                <!-- Service Single Content Start -->
+                <div class="service-single-content">
+
+                    <!-- Service Feature Image Start -->
+                    <div class="service-feature-image">
+                        <figure class="image-anime reveal">
+                            <img src="/img/Visa/tourist.jpg" alt="Tourists exploring Côte d’Ivoire">
+                        </figure>
+                    </div>
+                    <!-- Service Feature Image End -->
+                    <!-- Service Entry Start -->
+                    <div class="service-entry">
+                        <p class="wow fadeInUp">
+                            Côte d’Ivoire offers visitors a rich experience, from its vibrant
+                            cities and cultural heritage to its beautiful coastlines, natural
+                            landscapes, and historical attractions. Travellers planning a
+                            holiday or leisure visit to the country should familiarise
+                            themselves with the applicable entry requirements and travel
+                            documentation before departure.
+                        </p>
+
+                        <p class="wow fadeInUp" data-wow-delay="0.1s">
+                            The Honorary Consulate of the Republic of Côte d’Ivoire in The
+                            Gambia provides general information and guidance to individuals
+                            planning tourist visits to Côte d’Ivoire, helping them understand
+                            relevant visa procedures and prepare for their journey.
+                        </p>
+
+                        <!-- Service Entry List Image Start -->
+                        <div class="service-entry-list-image">
+
+                            <div class="service-feature-image col-lg-6">
+                                <figure class="image-anime reveal">
+                                    <img src="/img/Visa/tourists.jpg" alt="Tourism and cultural attractions in Côte d’Ivoire">
+                                </figure>
+                            </div>
+
+                            <!-- Service Entry List Start -->
+                            <div class="service-entry-list wow fadeInUp col-lg-6" data-wow-delay="0.2s">
+                                <ul>
+                                    <li>Information on tourist visa requirements and application procedures</li>
+                                    <li>Guidance on passports and supporting travel documents</li>
+                                    <li>General information on travel and entry requirements</li>
+                                    <li>Travel guidance for holidays, sightseeing, and cultural visits</li>
+                                    <li>Assistance with general tourist-related consular enquiries</li>
+                                </ul>
+                            </div>
+                            <!-- Service Entry List End -->
+
+                        </div>
+                        <!-- Service Entry List Image End -->
+
+                        <p class="wow fadeInUp">
+                            Visitors are encouraged to verify current entry requirements,
+                            visa conditions, and permitted duration of stay with the
+                            appropriate Ivorian immigration or diplomatic authorities
+                            before booking their travel. Visa requirements may vary
+                            depending on nationality and purpose of travel.
+                        </p>
+                    </div>
+                    <!-- Service Entry End -->
+
+                </div>
+                <partial name="_VisaInformation" />
+            </div>
+        </div>
+    </div>
+</div>
+ 

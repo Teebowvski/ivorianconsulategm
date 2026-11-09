@@ -1,0 +1,500 @@
+﻿ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Honorary Consulate of Côte d'Ivoire</title>
+    <script type="importmap"></script>
+
+@*     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Ivory_Coast.styles.css" asp-append-version="true" /> *@
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" type="image/x-icon" href="~/img/logo.jpg">
+    <!-- Google Fonts Css-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap" rel="stylesheet">
+    <!-- Bootstrap Css -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <!-- SlickNav Css -->
+    <link href="~/css/slicknav.min.css" rel="stylesheet">
+    <!-- Swiper Css -->
+    <link rel="stylesheet" href="~/css/swiper-bundle.min.css">
+    <!-- Font Awesome Icon Css-->
+    <link href="~/css/all.min.css" rel="stylesheet" media="screen">
+    <!-- Animated Css -->
+    <link href="~/css/animate.css" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <!-- Mouse Cursor Css File -->
+    <link rel="stylesheet" href="~/css/mousecursor.css">
+    <!-- Main Custom Css -->
+    <link href="~/css/custom.css" rel="stylesheet" media="screen">
+
+    <style>
+            /* Toast notification container */
+            .toast-notification {
+                position: fixed;
+                z-index: 9999;
+                top: 1rem;
+                right: 1rem;
+                display: flex;
+                flex-direction: column;
+                padding: 1.5rem 1rem;
+                pointer-events: none;
+            }
+
+            .toast-success-notification {
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .toast-failed-notification {
+                top: 1rem;
+                right: 1rem;
+            }
+
+            /* Toast wrapper */
+            .toast-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                width: 100%;
+                gap: 1rem;
+            }
+
+            /* Toast content */
+            .toast-content {
+                width: 100%;
+                max-width: 24rem;
+                overflow: hidden;
+                background-color: #ffffff;
+                border-radius: 0.5rem;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(0, 0, 0, 0.05);
+                pointer-events: auto;
+                opacity: 0;
+                transform: translateY(0.5rem);
+                transition: opacity 300ms ease, transform 300ms ease;
+            }
+
+                /* Toast visible state */
+                .toast-content.toast-visible {
+                    opacity: 1;
+                    transform: translate(0, 0);
+                }
+
+            /* Toast inner layout */
+            .toast-body {
+                display: flex;
+                align-items: flex-start;
+                padding: 1rem;
+            }
+
+            /* Icon */
+            .toast-icon {
+                flex-shrink: 0;
+            }
+
+                .toast-icon svg {
+                    display: block;
+                    width: 1.5rem;
+                    height: 1.5rem;
+                }
+
+            .toast-success-notification .toast-icon {
+                color: #4ade80;
+            }
+
+            .toast-failed-notification .toast-icon {
+                color: #f87171;
+            }
+
+            /* Message */
+            .toast-message {
+                flex: 1;
+                width: 0;
+                min-width: 0;
+                margin-left: 0.75rem;
+                padding-top: 0.125rem;
+            }
+
+            .toast-heading {
+                margin: 0;
+                color: #111827;
+                font-size: 0.875rem;
+                font-weight: 500;
+                line-height: 1.25rem;
+            }
+
+            .toast-description {
+                margin: 0.25rem 0 0;
+                color: #6b7280;
+                font-size: 0.875rem;
+                font-weight: 400;
+                line-height: 1.25rem;
+                overflow-wrap: break-word;
+            }
+
+            /* Close button */
+            .toast-close {
+                display: flex;
+                flex-shrink: 0;
+                margin-left: 1rem;
+            }
+
+                .toast-close button {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 0;
+                    border: 0;
+                    border-radius: 0.375rem;
+                    background-color: #ffffff;
+                    color: #9ca3af;
+                    cursor: pointer;
+                    transition: color 150ms ease;
+                }
+
+                    .toast-close button:hover {
+                        color: #6b7280;
+                    }
+
+                    .toast-close button:focus {
+                        outline: 2px solid #6366f1;
+                        outline-offset: 2px;
+                    }
+
+                .toast-close svg {
+                    width: 1.25rem;
+                    height: 1.25rem;
+                }
+            /* Initial toast state */
+            .toast-content {
+                opacity: 0;
+                transform: translateY(0.5rem);
+                transition: opacity 300ms ease, transform 300ms ease;
+            }
+
+                /* Visible toast state */
+                .toast-content.toast-visible {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                /* Closing animation */
+                .toast-content.toast-hiding {
+                    opacity: 0;
+                    transform: translateY(0.5rem);
+                }
+            /* Dark mode */
+            @@media (prefers-color-scheme: dark) {
+                .toast-content {
+                    background-color: #111827;
+                }
+
+                .toast-heading {
+                    color: #ffffff;
+                }
+
+                .toast-description {
+                    color: #9ca3af;
+                }
+
+                .toast-close button {
+                    background-color: #111827;
+                    color: #9ca3af;
+                }
+
+                    .toast-close button:hover {
+                        color: #d1d5db;
+                    }
+            }
+
+            /* Small screens */
+            @@media (max-width: 639px) {
+                .toast-notification {
+                    right: 0;
+                    left: 0;
+                    padding: 1.5rem 1rem;
+                }
+
+                .toast-wrapper {
+                    align-items: center;
+                }
+
+                .toast-content {
+                    max-width: 100%;
+                }
+            }
+    </style>
+</head>
+<body>
+    <!-- Preloader Start -->
+    <div class="preloader">
+        <div class="loading-container">
+            <div class="loading"></div>
+            <div id="loading-icon"><img src="~/img/logo.jpg" alt=""></div>
+        </div>
+    </div>
+    <partial name="_Header" />
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div id="toastSuccessNotification" aria-live="assertive"
+             class="fixed z-50 top-4 right-4 flex flex-col px-4 py-6 pointer-events-none sm:p-6">
+            <div class="w-full flex flex-col items-center space-y-4 sm:items-end">
+                <div id="toastSuccessContent"
+                     class="max-w-sm w-full bg-white dark:bg-gray-900 shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden transform transition-all duration-300 opacity-0 translate-y-2 sm:translate-y-0 sm:translate-x-2">
+                    <div class="p-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <svg class="h-6 w-6 text-green-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                     viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                          d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div class="ml-3 w-0 flex-1 pt-0.5">
+                                <p class="text-sm font-medium text-gray-900 dark:text-white">Successfully saved!</p>
+                                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">@TempData["SuccessMessage"]</p>
+                            </div>
+                            <div class="ml-4 flex-shrink-0 flex">
+                                <button onclick="closeSuccessToast()"
+                                        class="bg-white dark:bg-gray-900 rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    <span class="sr-only">Close</span>
+                                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                         fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                              clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+    @if (TempData["FailedMessage"] != null)
+    {
+        <div id="toastFailedNotification" aria-live="assertive"
+             class="absolute z-50 inset-0 flex items-end px-4 py-6 pointer-events-none sm:p-6 sm:items-start">
+            <div class="w-full flex flex-col items-center space-y-4 sm:items-end">
+                <div id="toastFailedContent"
+                     class="max-w-sm w-full bg-white dark:bg-gray-900 shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden transform transition-all duration-300 opacity-0 translate-y-2 sm:translate-y-0 sm:translate-x-2">
+                    <div class="p-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                @*    <svg class="h-6 w-6 text-red-400" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg> *@
+                                <svg class="w-6 h-6 text-red-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 9-6 6m0-6 6 6m6-3a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                                </svg>
+
+                            </div>
+                            <div class="ml-3 w-0 flex-1 pt-0.5">
+                                <p class="text-sm font-medium text-gray-900 dark:text-white">Save failed!</p>
+                                <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">@TempData["FailedMessage"]</p>
+                            </div>
+                            <div class="ml-4 flex-shrink-0 flex">
+                                <button onclick="closeFailedToast()"
+                                        class="bg-white dark:bg-gray-900 rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                    <span class="sr-only">Close</span>
+                                    <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                         fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd"
+                                              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                              clip-rule="evenodd" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    }
+    <div class="">
+
+        <main role="main" class=" ">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-12">
+                    <!-- About Footer Start -->
+                    <div class="about-footer">
+                        <!-- Footer Logo Start -->
+                        <div class="footer-logo">
+                            <img src="~/img/logo.jpg"
+                                 style="height: 70px; width: auto; display: block;"
+                                 alt="Logo">
+                        </div>
+                        <!-- Footer Logo End -->
+                        <!-- About Footer Content Start -->
+                        <div class="about-footer-content">
+                            <p>Supporting connections between Côte d’Ivoire and The Gambia through reliable information, guidance, and assistance.</p>
+                        </div>
+                        <!-- About Footer Content End -->
+                        <!-- Footer Social Link Start -->
+                        <div class="footer-social-links">
+                            <ul>
+                                <li><a target="_blank" href="https://instagram.com/Ivorianconsulategm"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a target="_blank" href="http://www.facebook.com/Ivorianconsulategm"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a target="_blank" href="http://linkedin.com/Ivorianconsulategm"><i class="fa-brands fa-linkedin"></i></a></li>
+                                <li><a target="_blank" href="http://www.twitter.com/Ivorianconsulategm"><i class="fa-brands fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- Footer Social Link End -->
+                    </div>
+                    <!-- About Footer End -->
+                </div>
+
+                <div class="col-lg-3 col-md-4 col-6">
+                    <!-- Footer Links Start -->
+                    <div class="footer-links">
+                        <h3>Services</h3>
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Visa">Visa &amp; Travel Information</a></li>
+                            <li><a asp-controller="Home" asp-action="Passport">Passport Services</a></li>
+                            <li><a asp-controller="Home" asp-action="Citizenship">Citizenship &amp; Nationality</a></li>
+                            <li><a asp-controller="Home" asp-action="CounsularAssistance">Consular Assistance</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Links End -->
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-6">
+                    <!-- Footer Links Start -->
+                    <div class="footer-links">
+                        <h3>quick links</h3>
+                        <ul>
+                            <li><a asp-controller="Home" asp-action="Invest">Invest In Cote d'Ivoire</a></li>
+                            <li><a asp-controller="Home" asp-action="About">About us</a></li>
+                            <li><a asp-controller="Home" asp-action="Press">Press</a></li>
+                           
+                            <li><a asp-controller="Home" asp-action="Faqs">FAQs</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Links End -->
+                </div>
+
+                <div class="col-lg-3 col-md-5">
+                    <!-- Footer Newsletter Box Start -->
+                    <div class="footer-links">
+                        <h3>Useful links</h3>
+                        <ul>
+                            <li><a target="_blank" href="https://www.cotedivoirepr.ci">cotedivoirepr</a></li>
+                            <li><a target="_blank" href="https://www.gouv.ci">gouv.ci</a></li>
+                            <li><a target="_blank" href="https://www.abidjan.net">abidjan.net</a></li>
+                            <li><a target="_blank" href="https://www.soirinfo.com">soirinfo</a></li>
+                            <li><a target="_blank" href="https://www.rti.ci">rti</a></li>
+                        </ul>
+                    </div>
+                    <!-- Footer Newsletter Box End -->
+                </div>
+            </div>
+
+            <!-- Footer Copyright Section Start -->
+            <div class="footer-copyright">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <!-- Footer Copyright Start -->
+                        <div class="footer-copyright-text">
+                            <p>Copyright © @DateTime.UtcNow.Year All Rights Reserved.</p>
+                        </div>
+                        <!-- Footer Copyright End -->
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- Footer Menu Start -->
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a asp-controller="Home" asp-action="Index"  >home</a></li>
+                                <li><a asp-controller="Home" asp-action="About">About us</a></li>
+                                <li><a asp-controller="Home" asp-action="Contact"  >contact us</a></li>
+                            </ul>
+                        </div>
+                        <!-- Footer Menu End -->
+                    </div>
+                </div>
+            </div>
+            <!-- Footer Copyright Section End -->
+        </div>
+    </footer>
+    <script>
+            window.addEventListener('DOMContentLoaded', function() {
+                const toast = document.getElementById('toastSuccessContent');
+
+                if (toast) {
+                    requestAnimationFrame(() => {
+                        toast.classList.add('toast-visible');
+                    });
+
+                    setTimeout(() => closeSuccessToast(), 5000);
+                }
+            });
+
+            function closeSuccessToast() {
+                const toast = document.getElementById('toastSuccessContent');
+
+                if (toast) {
+                    toast.classList.remove('toast-visible');
+                    toast.classList.add('toast-hiding');
+
+                    setTimeout(() => {
+                        const wrapper = document.getElementById('toastSuccessNotification');
+                        if (wrapper) wrapper.remove();
+                    }, 300);
+                }
+            }
+    </script>
+    <!-- Jquery Library File -->
+    <script src="~/js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="~/js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="~/js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="~/js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="~/js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="~/js/jquery.waypoints.min.js"></script>
+    <script src="~/js/jquery.counterup.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="~/js/SmoothScroll.js"></script>
+    <!-- Parallax js -->
+    <script src="~/js/parallaxie.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="~/js/gsap.min.js"></script>
+    <script src="~/js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="~/js/SplitText.js"></script>
+    <script src="~/js/ScrollTrigger.min.js"></script>
+    <!-- YTPlayer js File -->
+    <script src="~/js/jquery.mb.YTPlayer.min.js"></script>
+    <!-- Wow js file -->
+    <script src="~/js/wow.min.js"></script>
+    <!-- Main Custom js file -->
+    <script src="~/js/function.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

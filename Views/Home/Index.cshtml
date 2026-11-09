@@ -1,0 +1,735 @@
+﻿@using Ivory_Coast.ViewModels
+@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .service-item .icon-box svg {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        color: var(--white-color);
+        z-index: 1;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .service-item:hover .icon-box svg,
+    .service-item.active .icon-box svg {
+        color: var(--accent-color);
+    }
+</style>
+<!-- Hero Section Start -->
+<div class="hero hero-bg-image hero-slider-layout">
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <!-- Hero Slide Start -->
+            <div class="swiper-slide">
+                <div class="hero-slide">
+                    <!-- Slider Image Start -->
+                    <div class="hero-slider-image">
+                        <img src="~/img/building.jpg" alt="">
+                    </div>
+                    <!-- Slider Image End -->
+
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <!-- Hero Content Start -->
+                                <div class="hero-content">
+                                    <!-- Section Title Start -->
+                                    <div class="section-title dark-section">
+                                        <h3 class="wow fadeInUp">Consular representation</h3>
+                                        <h1 class="text-anime-style-3" data-cursor="-opaque">Honorary Consulate of the Republic of Côte d'Ivoire</h1>
+                                        <p class="wow fadeInUp" data-wow-delay="0.2s">Serving as a bridge between Côte d'Ivoire and The Gambia, the Honorary Consulate provides consular assistance, facilitates access to information, and promotes stronger connections between our communities.</p>
+                                    </div>
+                                    <!-- Section Title End -->
+                                    <!-- Hero Button Start -->
+                                    <div class="hero-btn wow fadeInUp" data-wow-delay="0.4s">
+                                        <a asp-controller="Home" asp-action="About" class="btn-default">About the Consulate</a>
+                                        <a asp-controller="Home" asp-action="Services" class="btn-default">Our Services</a>
+                                    </div>
+                                    <!-- Hero Button End -->
+                                </div>
+                                <!-- Hero Content End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hero Slide End -->
+            <!-- Hero Slide Start -->
+            <div class="swiper-slide">
+                <div class="hero-slide">
+                    <!-- Slider Image Start -->
+                    <div class="hero-slider-image">
+                        <img src="~/img/cote-d-ivoire-abidjan--600659721.jpg" alt="">
+                    </div>
+                    <!-- Slider Image End -->
+
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <!-- Hero Content Start -->
+                                <div class="hero-content">
+                                    <!-- Section Title Start -->
+                                    <div class="section-title dark-section">
+                                        <h3 class="wow fadeInUp">Visa & Travel Assistance</h3>
+                                        <h1 class="text-anime-style-3" data-cursor="-opaque">Discover Côte d'Ivoire. Let Your Journey Begin.</h1>
+                                        <p class="wow fadeInUp" data-wow-delay="0.2s">Whether travelling for business, tourism, education, or personal reasons, access guidance on Ivorian visa requirements, application procedures, and travel documentation through the Consulate.</p>
+                                    </div>
+                                    <!-- Section Title End -->
+                                    <!-- Hero Button Start -->
+                                    <div class="hero-btn wow fadeInUp" data-wow-delay="0.4s">
+                                        <a asp-controller="Home" asp-action="Visa" class="btn-default">Visa Information</a>
+                                        <a asp-controller="Home" asp-action="Contact" class="btn-default">Contact Us</a>
+                                    </div>
+                                    <!-- Hero Button End -->
+                                </div>
+                                <!-- Hero Content End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="hero-slide">
+                    <!-- Slider Image Start -->
+                    <div class="hero-slider-image">
+                        <img src="~/img/Slider1.jpg" alt="">
+                    </div>
+                    <!-- Slider Image End -->
+
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6">
+                                <!-- Hero Content Start -->
+                                <div class="hero-content">
+                                    <!-- Section Title Start -->
+                                    <div class="section-title dark-section">
+                                        <h3 class="wow fadeInUp">
+                                            Your Consular Point of Contact</h3>
+                                            <h1 class="text-anime-style-3" data-cursor="-opaque">Bringing Essential Services and Information Closer to You.</h1>
+                                            <p class="wow fadeInUp" data-wow-delay="0.2s">From citizenship enquiries and passport matters to cultural, educational, economic, and general information, the Consulate provides guidance and assistance to individuals seeking connections with Côte d'Ivoire.</p>
+                                    </div>
+                                    <!-- Section Title End -->
+                                    <!-- Hero Button Start -->
+                                    <div class="hero-btn wow fadeInUp" data-wow-delay="0.4s">
+                                        <a asp-controller="Home" asp-action="ConsularAssistance" class="btn-default">Consular Assistance</a>
+                                        <a asp-controller="Home" asp-action="Contact" class="btn-default">Contact Us</a>
+                                    </div>
+                                    <!-- Hero Button End -->
+                                </div>
+                                <!-- Hero Content End -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Hero Slide End -->
+        </div>
+        <div class="hero-pagination"></div>
+    </div>
+</div>
+ 
+ 
+    <div class="about-us">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <!-- About Us Images Start -->
+                    <div class="about-us-images">
+                        <div class="about-img-1">
+                            <figure class="image-anime reveal">
+                            <img src="~/img/press.jpg" alt="Honorary Consulate of Côte d'Ivoire">
+                            </figure>
+                        </div>
+
+                        <div class="about-img-2">
+                            <figure class="image-anime reveal">
+                            <img src="~/img/cut.jpg" alt="Côte d'Ivoire and The Gambia">
+                            </figure>
+                        </div>
+
+                        <!-- Consulate Highlight Box Start -->
+                        <div class="success-rating-box">
+                            <div class="Success-rating-content">
+
+                                <div class="flex-cols items-center ">
+                                    <h2 class="mx-auto w-full flex-column items-center text-center"><span class="counter">2</span></h2>
+                                    <p>Nations, One</p>
+                                    <p class="text-center">Vision</p>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- Consulate Highlight Box End -->
+                    </div>
+                    <!-- About Us Images End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- About Us Content Start -->
+                    <div class="about-us-content">
+
+                        <div class="section-title">
+                            <h3 class="wow fadeInUp">About the Honorary Consulate</h3>
+
+                            <h2 class="text-anime-style-3" data-cursor="-opaque">
+                                Strengthening connections between Côte d'Ivoire and The Gambia.
+                            </h2>
+
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">
+                                The Honorary Consulate of the Republic of Côte d'Ivoire
+                                in The Gambia serves as a point of contact for individuals,
+                                businesses, and institutions seeking consular assistance,
+                                information, and engagement with Côte d'Ivoire. Through
+                                its services, the Consulate promotes stronger ties and
+                                facilitates connections between the two nations.
+                            </p>
+                        </div>
+
+                        <!-- About Us List Start -->
+                        <div class="about-us-list wow fadeInUp" data-wow-delay="0.4s">
+                            <ul>
+                                <li>Facilitating consular assistance and visa-related enquiries.</li>
+                                <li>Promoting economic, cultural, and educational exchange.</li>
+                                <li>Supporting Ivorian nationals and fostering international relations.</li>
+                            </ul>
+                        </div>
+                        <!-- About Us List End -->
+                        <!-- About Experience Box Start -->
+                        <div class="about-experience-box">
+                             
+
+                            <div class="about-experience-content">
+                                <p>
+                                    <strong>Bridging Nations</strong>
+                                    Promoting friendship, cooperation, and meaningful
+                                    connections between Côte d'Ivoire and The Gambia.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- About Experience Box End -->
+
+                        <div class="about-us-btn wow fadeInUp" data-wow-delay="0.6s">
+                            <a asp-controller="Home" asp-action="About" class="btn-default">Discover the Consulate</a>
+                        </div>
+
+                    </div>
+                    <!-- About Us Content End -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!-- About Us Section End -->
+<!-- Our Services Section Start -->
+  
+    <div class="our-services">
+        <div class="container">
+            <div class="row section-row align-items-center">
+                <div class="col-lg-6">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">Our Consular Services</h3>
+                        <h2 class="text-anime-style-3" data-cursor="-opaque">
+                            Dedicated services. Reliable consular assistance.
+                        </h2>
+                    </div>
+                    <!-- Section Title End -->
+                </div>
+
+                <div class="col-lg-6">
+                    <!-- Section Title Content Start -->
+                    <div class="section-title-content wow fadeInUp" data-wow-delay="0.2s">
+                        <p>
+                            The Honorary Consulate provides guidance and assistance
+                            on a range of consular matters, helping individuals,
+                            businesses, and institutions access relevant information
+                            and services relating to the Republic of Côte d'Ivoire.
+                        </p>
+                    </div>
+                    <!-- Section Title Content End -->
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item wow fadeInUp">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14"> <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect width="11" height="13" x="1.5" y=".5" rx="1" /><circle cx="7" cy="6" r="3" /><path d="M4 6h6M7 9V3" /></g></svg>
+                        </div>
+                        <div class="service-content">
+                            <h3>Visa &amp; Travel Information</h3>
+                            <p>Information and guidance on Ivorian visa requirements, application procedures, and travel documentation.</p>
+                        </div>
+                        <div class="service-btn">
+                            <a asp-controller="Home" asp-action="Visa" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48"> <defs><mask id="SVGB2Ja9bgT"><g fill="none" stroke="#fff" stroke-width="4"><path stroke-linecap="round" d="M13 40H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v4" /><rect width="34" height="28" x="13" y="44" fill="#555" rx="2" transform="rotate(-90 13 44)" /><circle cx="27" cy="27" r="8" /><path stroke-linecap="round" d="M35 28s-3-.5-5 1s-2.599 5.102-2 6m-4-8c0 2-2 4-4 4m11-11s0 4-3 4" /></g></mask></defs><path fill="currentColor" d="M0 0h48v48H0z" mask="url(#SVGB2Ja9bgT)" /></svg>
+                        </div>
+                        <div class="service-content">
+                            <h3>Passport Services</h3>
+                            <p>Guidance on Ivorian passport applications, renewals, documentation, and related consular requirements.</p>
+                        </div>
+                        <div class="service-btn">
+                            <a asp-controller="Home" asp-action="Passport" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 72 72"> <path fill="#fff" d="M5 17h62v38H5z" /><path fill="#e27022" d="M5 17h21v38H5z" /><path fill="#5c9e31" d="M46 17h21v38H46z" /><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 17h62v38H5z" /></svg>
+                        </div>
+                        <div class="service-content">
+                            <h3>Citizenship &amp; Nationality</h3>
+                            <p>Information on Ivorian citizenship, nationality requirements, and relevant administrative procedures.</p>
+                        </div>
+                        <div class="service-btn">
+                            <a asp-controller="Home" asp-action="Citizenship" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="service-item wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"> <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M13 15c-2.292 6-8.708 0-11 6m13.5-6h1.501c2.357 0 3.536 0 4.268-.732s.732-1.911.732-4.268V8c0-2.357 0-3.536-.732-4.268S19.36 3 17.001 3h-4c-2.357 0-3.535 0-4.267.732c-.62.62-.716 1.561-.73 3.268" /><circle cx="7.5" cy="12.5" r="2.5" /><path d="M12 7h6m0 4h-3" /></g></svg>
+                        </div>
+                        <div class="service-content">
+                            <h3>Consular Assistance</h3>
+                            <p>General enquiries, institutional contacts, and guidance on matters relating to Côte d'Ivoire.</p>
+                        </div>
+                        <div class="service-btn">
+                            <a asp-controller="Home" asp-action="ConsularAssistance" class="readmore-btn">read more</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-12">
+                    <!-- Service Contact Text Start -->
+                    <div class="service-contact-text wow fadeInUp" data-wow-delay="0.8s">
+                        <p>
+                            Need assistance or have a consular enquiry?
+                        <a asp-controller="Home" asp-action="Contact">Contact the Consulate</a>
+                        </p>
+                    </div>
+                    <!-- Service Contact Text End -->
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+<!-- Our Services Section End -->
+<!-- Our Consultancy Section Start -->
+<partial name="_ConsularInformation"/>
+ 
+<!-- Our Consultancy Section End -->
+<!-- Our Consultancy Section End -->
+<!-- Intro Video Section Start -->
+<partial name="_Intro"/>
+<!-- Intro Video Section End -->
+<!-- Our Client Section Start -->
+<div class="our-clients">
+    <div class="container">
+
+        <div class="row section-row align-items-center">
+
+            <div class="col-lg-6">
+                <!-- Section Title Start -->
+                <div class="section-title">
+                    <h3 class="wow fadeInUp">our role</h3>
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">Building stronger relations between nations</h2>
+                </div>
+                <!-- Section Title End -->
+            </div>
+
+            <div class="col-lg-6">
+                <!-- Section Title Content Start -->
+                <div class="section-title-content wow fadeInUp" data-wow-delay="0.2s">
+                    <p>The Honorary Consulate serves as a point of contact for consular matters, promotes bilateral relations, and strengthens connections between Côte d'Ivoire and The Gambia.</p>
+                </div>
+                <!-- Section Title Content End -->
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-4 col-md-6">
+                <!-- Client Item Start -->
+                <div class="client-item wow fadeInUp">
+
+                    <div class="client-image">
+                        <figure class="image-anime">
+                            <img src="~/img/consularservice.jpg" alt="">
+                        </figure>
+                    </div>
+
+                    <div class="client-body">
+                        <div class="client--content">
+                            <h3>Consular Services</h3>
+                            <p>Information and assistance on consular matters.</p>
+                        </div>
+
+ 
+                    </div>
+
+                </div>
+                <!-- Client Item End -->
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <!-- Client Item Start -->
+                <div class="client-item wow fadeInUp" data-wow-delay="0.2s">
+
+                    <div class="client-image">
+                        <figure class="image-anime">
+                            <img src="/img/cocoa.jpg" alt="">
+                        </figure>
+                    </div>
+
+                    <div class="client-body">
+                        <div class="client--content">
+                            <h3>Trade & Investment</h3>
+                            <p>Promoting economic cooperation and opportunities.</p>
+                        </div>
+
+       
+                    </div>
+
+                </div>
+                <!-- Client Item End -->
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <!-- Client Item Start -->
+                <div class="client-item wow fadeInUp" data-wow-delay="0.4s">
+
+                    <div class="client-image">
+                        <figure class="image-anime">
+                            <img src="/img/ivorian.jpg" alt="">
+                        </figure>
+                    </div>
+
+                    <div class="client-body">
+                        <div class="client--content">
+                            <h3>Culture & Education</h3>
+                            <p>Encouraging cultural, educational and institutional exchange.</p>
+                        </div>
+
+           
+                    </div>
+
+                </div>
+                <!-- Client Item End -->
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Our Client Section End -->
+<!-- Why Choose Us Section Start -->
+<div class="why-choose-us">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <!-- Why Choose Content Start -->
+                <div class="why-choose-content">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">our commitment</h3>
+                        <h2 class="text-anime-style-3" data-cursor="-opaque">Dedicated to service and cooperation</h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">The Honorary Consulate is committed to supporting consular needs and fostering stronger relations between Côte d'Ivoire and The Gambia.</p>
+                    </div>
+                    <!-- Section Title End -->
+                    <!-- Why Choose Content Body Start -->
+                    <div class="why-choose-content-body">
+
+                        <!-- Why Choose Item Start -->
+                        <div class="why-choose-item wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="icon-box">
+                                <svg style="width: 60px; height: 60px;  "
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24">
+                                    <g fill="none" stroke="#ea580c" stroke-linecap="round"
+                                       stroke-linejoin="round" stroke-width="1.5">
+                                        <path d="M13 15c-2.292 6-8.708 0-11 6m13.5-6h1.501c2.357 0 3.536 0 4.268-.732s.732-1.911.732-4.268V8c0-2.357 0-3.536-.732-4.268S19.36 3 17.001 3h-4c-2.357 0-3.535 0-4.267.732c-.62.62-.716 1.561-.73 3.268" />
+                                        <circle cx="7.5" cy="12.5" r="2.5" />
+                                        <path d="M12 7h6m0 4h-3" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="why-choose-item-content">
+                                <h3>Consular Assistance</h3>
+                                <p>Providing guidance and information on consular matters.</p>
+                            </div>
+                        </div>
+                        <!-- Why Choose Item End -->
+                        <!-- Why Choose Item Start -->
+                        <div class="why-choose-item wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="icon-box">
+                                <svg style="width: 60px; height: 60px;"
+                                               width="32" height="32" viewBox="0 0 14 14">
+                                    <g fill="none" stroke="#ea580c" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 8.5a5 5 0 1 1-8.25-3.8" /><path d="M5.28 6.65a1.6 1.6 0 0 0-.16.7a1.52 1.52 0 0 0 1.53 1.53a.77.77 0 0 1 .77.77v3.47M.57 9.27h1.85A1.54 1.54 0 0 1 4 10.81v2.45m9.26-11.39l-1-.34a.34.34 0 0 0-.39.13l-.73 1.13l-4-2A2.49 2.49 0 0 0 3.53 2.1A.68.68 0 0 0 4 3l2.61.84l.26.09l.49 1.68a.36.36 0 0 0 .24.25l1.18.38a.37.37 0 0 0 .48-.41L9 4.58h.17l2.55.83a.67.67 0 0 0 .85-.41l.9-2.77a.34.34 0 0 0-.21-.36Z" /></g>
+                                </svg>
+                            </div>
+                            <div class="why-choose-item-content">
+                                <h3>International Cooperation</h3>
+                                <p>Encouraging dialogue, partnership and mutual understanding.</p>
+                            </div>
+                        </div>
+                        <!-- Why Choose Item End -->
+
+                    </div>
+                    <!-- Why Choose Content Body End -->
+                </div>
+                <!-- Why Choose Content End -->
+            </div>
+
+            <div class="col-lg-7">
+                <!-- Why Choose Image Start -->
+                <div class="why-choose-image">
+
+                    <!-- Apply Now Image Start -->
+                    <div class="apply-now-img">
+                       
+                    </div>
+                    <!-- Apply Now Image End -->
+                    <!-- Why Choose Image 1 Start -->
+                    <div class="why-choose-img-1">
+                        <figure class="image-anime reveal" style="max-width:415px;">
+                            <img src="~/img/commit.jpg" alt="">
+                        </figure>
+                    </div>
+                    <!-- Why Choose Image 1 End -->
+                    <!-- Why Choose Image 2 Start -->
+                    <div class="why-choose-img-2">
+                        <figure class="image-anime reveal" style="max-width:350px;">
+                            <img src="~/img/why-choose.jpg" alt="">
+                        </figure>
+                    </div>
+                    <!-- Why Choose Image 2 End -->
+                    <!-- Experience Counter Box Start -->
+                    <div class="experience-counter-box">
+                        <h2><span class="counter">2</span></h2>
+                        <p>Nations Connected</p>
+                    </div>
+                    <!-- Experience Counter Box Start End -->
+
+                </div>
+                <!-- Why Choose Image End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Why Choose Us Section End -->
+<!-- Customer Benefit Ticker Start -->
+<div class="our-scrolling-ticker customer-benefit-ticker">
+    <div class="scrolling-ticker-box">
+        <div class="scrolling-content">
+            <span><img src="~/images/asterisk-icon.svg" alt="">Strengthening Relations Between Côte d'Ivoire and The Gambia</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Promoting Friendship, Partnership and Cooperation</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Connecting People, Institutions and Opportunities</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Serving with Commitment and Dedication</span>
+        </div>
+
+        <div class="scrolling-content">
+            <span><img src="~/images/asterisk-icon.svg" alt="">Strengthening Relations Between Côte d'Ivoire and The Gambia</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Promoting Friendship, Partnership and Cooperation</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Connecting People, Institutions and Opportunities</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Serving with Commitment and Dedication</span>
+        </div>
+    </div>
+</div>
+<!-- Customer Benefit Ticker End -->
+<!-- Our Testimonial Section Start -->
+<div class="our-testimonial">
+    <div class="container">
+        <div class="row section-row align-items-center">
+
+            <div class="col-lg-6">
+                <!-- Section Title Start -->
+                <div class="section-title">
+                    <h3 class="wow fadeInUp">côte d'ivoire & the gambia</h3>
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">A partnership built on friendship and cooperation</h2>
+                </div>
+                <!-- Section Title End -->
+            </div>
+
+            <div class="col-lg-6">
+                <!-- Section Title Content Start -->
+                <div class="section-title-content wow fadeInUp" data-wow-delay="0.2s">
+                    <p>Promoting mutual understanding and strengthening the bonds between our two nations through dialogue, engagement and cooperation.</p>
+                </div>
+                <!-- Section Title Content End -->
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Testimonial Slider Start -->
+                <div class="testimonial-slider">
+                    <div class="swiper">
+                        <div class="swiper-wrapper" data-cursor-text="Drag">
+
+                            <!-- Testimonial Slide Start -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-header">
+                                  
+                                        <div class="author-content">
+                                            <h3>Diplomatic Relations</h3>
+                                            <p>Côte d'Ivoire & The Gambia</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-body">
+                                   
+                                        <p>Fostering friendship, dialogue and stronger relations between the two nations.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial Slide End -->
+                            <!-- Testimonial Slide Start -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-header">
+                                   
+                                        <div class="author-content">
+                                            <h3>Economic Cooperation</h3>
+                                            <p>Trade & Investment</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-body">
+                                   
+                                        <p>Encouraging business engagement and exploring opportunities for shared growth.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial Slide End -->
+                            <!-- Testimonial Slide Start -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-header">
+                                       
+                                        <div class="author-content">
+                                            <h3>Cultural Exchange</h3>
+                                            <p>People & Institutions</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-body">
+                                     
+                                        <p>Building connections through cultural, educational and institutional exchange.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial Slide End -->
+                            <!-- Testimonial Slide Start -->
+                            <div class="swiper-slide">
+                                <div class="testimonial-item">
+                                    <div class="testimonial-header">
+                                    
+                                        <div class="author-content">
+                                            <h3>Consular Engagement</h3>
+                                            <p>Service & Assistance</p>
+                                        </div>
+                                    </div>
+                                    <div class="testimonial-body">
+                                      
+                                        <p>Providing information and guidance on matters relating to Côte d'Ivoire.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Testimonial Slide End -->
+
+                        </div>
+                        <div class="testimonial-pagination"></div>
+                    </div>
+                </div>
+                <!-- Testimonial Slider End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Our Testimonial Section End -->
+<!-- CTA Box Start -->
+<partial name="_Contact"/>
+<!-- CTA Box End -->
+<!-- Our Blog Section Start -->
+<div class="our-blog">
+    <div class="container">
+
+        <div class="row section-row align-items-center">
+
+            <div class="col-lg-6">
+                <!-- Section Title Start -->
+                <div class="section-title">
+                    <h3 class="wow fadeInUp">news & announcements</h3>
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">Latest News & Updates</h2>
+                </div>
+                <!-- Section Title End -->
+            </div>
+
+            <div class="col-lg-6">
+                <!-- Section Title Content Start -->
+                <div class="section-title-content wow fadeInUp" data-wow-delay="0.2s">
+                    <p>Stay informed about consular announcements, developments in Côte d'Ivoire, and relations between Côte d'Ivoire and The Gambia.</p>
+                </div>
+                <!-- Section Title Content End -->
+            </div>
+
+        </div>
+
+        <div class="row">
+            @foreach (var item in Model.NewsList)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <!-- Post Item Start -->
+                    <div class="post-item wow fadeInUp">
+
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image">
+                            <a asp-controller="Home" asp-action="News" asp-route-Id="@item.Id" data-cursor-text="View">
+                                <figure class="image-anime">
+                                    <img src="@item.Image" alt="">
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- Post Featured Image End -->
+                        <!-- Post Item Body Start -->
+                        <div class="post-item-body">
+
+                            <!-- Post Item Content Start -->
+                            <div class="post-item-content">
+                                <h2><a asp-controller="Home" asp-action="News" asp-route-Id="@item.Id">@item.Title</a></h2>
+                            </div>
+                            <!-- Post Item Content End -->
+                            <!-- Post Item Button Start-->
+                            <div class="post-item-btn">
+                                <a asp-controller="Home" asp-action="News" asp-route-Id="@item.Id" class="readmore-btn">read more</a>
+                            </div>
+                            <!-- Post Item Button End-->
+
+                        </div>
+                        <!-- Post Item Body End -->
+
+                    </div>
+                    <!-- Post Item End -->
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- Our Blog Section End -->

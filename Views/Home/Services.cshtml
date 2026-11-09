@@ -1,0 +1,308 @@
+﻿@{
+    ViewData["Title"] = "Services";
+    Layout = "_Layout";
+}
+<style>
+    .service-item .icon-box svg {
+        position: relative;
+        width: 40px;
+        height: 40px;
+        color: var(--white-color);
+        z-index: 1;
+        transition: all 0.4s ease-in-out;
+    }
+
+    .service-item:hover .icon-box svg,
+    .service-item.active .icon-box svg {
+        color: var(--accent-color);
+    }
+</style>
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <!-- Page Header Box Start -->
+                <div class="page-header-box">
+                    <h1 class="text-anime-style-3" data-cursor="-opaque">Services</h1>
+                    <nav class="wow fadeInUp">
+                        <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">home</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Services</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- Page Header Box End -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Page Service Start -->
+<!-- Page Service Start -->
+<div class="page-services">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3 col-md-6">
+                <div class="service-item wow fadeInUp">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 14 14"> <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect width="11" height="13" x="1.5" y=".5" rx="1" /><circle cx="7" cy="6" r="3" /><path d="M4 6h6M7 9V3" /></g></svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Visa &amp; Travel Information</h3>
+                        <p>Information and guidance on Ivorian visa requirements, application procedures, and travel documentation.</p>
+                    </div>
+                    <div class="service-btn">
+                        <a asp-controller="Home" asp-action="Visa" class="readmore-btn">read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="service-item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 48 48"> <defs><mask id="SVGB2Ja9bgT"><g fill="none" stroke="#fff" stroke-width="4"><path stroke-linecap="round" d="M13 40H9a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h20a2 2 0 0 1 2 2v4" /><rect width="34" height="28" x="13" y="44" fill="#555" rx="2" transform="rotate(-90 13 44)" /><circle cx="27" cy="27" r="8" /><path stroke-linecap="round" d="M35 28s-3-.5-5 1s-2.599 5.102-2 6m-4-8c0 2-2 4-4 4m11-11s0 4-3 4" /></g></mask></defs><path fill="currentColor" d="M0 0h48v48H0z" mask="url(#SVGB2Ja9bgT)" /></svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Passport Services</h3>
+                        <p>Guidance on Ivorian passport applications, renewals, documentation, and related consular requirements.</p>
+                    </div>
+                    <div class="service-btn">
+                        <a asp-controller="Home" asp-action="Passport" class="readmore-btn">read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="service-item wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 72 72"> <path fill="#fff" d="M5 17h62v38H5z" /><path fill="#e27022" d="M5 17h21v38H5z" /><path fill="#5c9e31" d="M46 17h21v38H46z" /><path fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 17h62v38H5z" /></svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Citizenship &amp; Nationality</h3>
+                        <p>Information on Ivorian citizenship, nationality requirements, and relevant administrative procedures.</p>
+                    </div>
+                    <div class="service-btn">
+                        <a asp-controller ="Home" asp-action="Citizenship" class="readmore-btn">read more</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="service-item wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="icon-box">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"> <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M13 15c-2.292 6-8.708 0-11 6m13.5-6h1.501c2.357 0 3.536 0 4.268-.732s.732-1.911.732-4.268V8c0-2.357 0-3.536-.732-4.268S19.36 3 17.001 3h-4c-2.357 0-3.535 0-4.267.732c-.62.62-.716 1.561-.73 3.268" /><circle cx="7.5" cy="12.5" r="2.5" /><path d="M12 7h6m0 4h-3" /></g></svg>
+                    </div>
+                    <div class="service-content">
+                        <h3>Consular Assistance</h3>
+                        <p>General enquiries, institutional contacts, and guidance on matters relating to Côte d'Ivoire.</p>
+                    </div>
+                    <div class="service-btn">
+                        <a asp-controller="Home" asp-action="CounsularAssistance" class="readmore-btn">read more</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<partial name="_ConsularInformation" />
+<!-- Intro Video Start -->
+<partial name="_Intro"/>
+<!-- Intro Video End -->
+<!-- Why Choose Us Section Start -->
+<div class="why-choose-us">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5">
+                <!-- Why Choose Content Start -->
+                <div class="why-choose-content">
+                    <!-- Section Title Start -->
+                    <div class="section-title">
+                        <h3 class="wow fadeInUp">our commitment</h3>
+                        <h2 class="text-anime-style-3" data-cursor="-opaque">Dedicated to service and cooperation</h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">The Honorary Consulate is committed to supporting consular needs and fostering stronger relations between Côte d'Ivoire and The Gambia.</p>
+                    </div>
+                    <!-- Section Title End -->
+                    <!-- Why Choose Content Body Start -->
+                    <div class="why-choose-content-body">
+
+                        <!-- Why Choose Item Start -->
+                        <div class="why-choose-item wow fadeInUp" data-wow-delay="0.4s">
+                            <div class="icon-box">
+                                <svg style="width: 60px; height: 60px;"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     viewBox="0 0 24 24">
+                                    <g fill="none" stroke="#ea580c" stroke-linecap="round"
+                                       stroke-linejoin="round" stroke-width="1.5">
+                                        <path d="M13 15c-2.292 6-8.708 0-11 6m13.5-6h1.501c2.357 0 3.536 0 4.268-.732s.732-1.911.732-4.268V8c0-2.357 0-3.536-.732-4.268S19.36 3 17.001 3h-4c-2.357 0-3.535 0-4.267.732c-.62.62-.716 1.561-.73 3.268" />
+                                        <circle cx="7.5" cy="12.5" r="2.5" />
+                                        <path d="M12 7h6m0 4h-3" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="why-choose-item-content">
+                                <h3>Consular Assistance</h3>
+                                <p>Providing guidance and information on consular matters.</p>
+                            </div>
+                        </div>
+                        <!-- Why Choose Item End -->
+                        <!-- Why Choose Item Start -->
+                        <div class="why-choose-item wow fadeInUp" data-wow-delay="0.6s">
+                            <div class="icon-box">
+                                <svg style="width: 60px; height: 60px;"
+                                     width="32" height="32" viewBox="0 0 14 14">
+                                    <g fill="none" stroke="#ea580c" stroke-linecap="round" stroke-linejoin="round"><path d="M10.5 8.5a5 5 0 1 1-8.25-3.8" /><path d="M5.28 6.65a1.6 1.6 0 0 0-.16.7a1.52 1.52 0 0 0 1.53 1.53a.77.77 0 0 1 .77.77v3.47M.57 9.27h1.85A1.54 1.54 0 0 1 4 10.81v2.45m9.26-11.39l-1-.34a.34.34 0 0 0-.39.13l-.73 1.13l-4-2A2.49 2.49 0 0 0 3.53 2.1A.68.68 0 0 0 4 3l2.61.84l.26.09l.49 1.68a.36.36 0 0 0 .24.25l1.18.38a.37.37 0 0 0 .48-.41L9 4.58h.17l2.55.83a.67.67 0 0 0 .85-.41l.9-2.77a.34.34 0 0 0-.21-.36Z" /></g>
+                                </svg>
+                            </div>
+                            <div class="why-choose-item-content">
+                                <h3>International Cooperation</h3>
+                                <p>Encouraging dialogue, partnership and mutual understanding.</p>
+                            </div>
+                        </div>
+                        <!-- Why Choose Item End -->
+
+                    </div>
+                    <!-- Why Choose Content Body End -->
+                </div>
+                <!-- Why Choose Content End -->
+            </div>
+
+            <div class="col-lg-7">
+                <!-- Why Choose Image Start -->
+                <div class="why-choose-image">
+
+                    <!-- Apply Now Image Start -->
+                    <div class="apply-now-img">
+                    </div>
+                    <!-- Apply Now Image End -->
+                    <!-- Why Choose Image 1 Start -->
+                    <div class="why-choose-img-1">
+                        <figure class="image-anime reveal" style="max-width:415px;">
+                            <img src="~/img/commit.jpg" alt="">
+                        </figure>
+                    </div>
+                    <!-- Why Choose Image 1 End -->
+                    <!-- Why Choose Image 2 Start -->
+                    <div class="why-choose-img-2">
+                        <figure class="image-anime reveal" style="max-width:350px;">
+                            <img src="~/img/why-choose.jpg" alt="">
+                        </figure>
+                    </div>
+                    <!-- Why Choose Image 2 End -->
+                    <!-- Experience Counter Box Start -->
+                    <div class="experience-counter-box">
+                        <h2><span class="counter">2</span></h2>
+                        <p>Nations Connected</p>
+                    </div>
+                    <!-- Experience Counter Box Start End -->
+
+                </div>
+                <!-- Why Choose Image End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Why Choose Us Section End -->
+@* <div class="our-services">
+    <div class="container">
+        <div class="row section-row align-items-center">
+            <div class="col-lg-6">
+                <!-- Section Title Start -->
+                <div class="section-title">
+                    <h3 class="wow fadeInUp">how we help clients</h3>
+                    <h2 class="text-anime-style-3" data-cursor="-opaque">Level with great visa serving policies</h2>
+                </div>
+                <!-- Section Title End -->
+            </div>
+
+            <div class="col-lg-6">
+                <!-- Section Title Content Start -->
+                <div class="section-title-content wow fadeInUp" data-wow-delay="0.2s">
+                    <p>We provide a skilled staff to help you get the most out of your immigration. Our qualified and dependable Immigration Consultants can assist you.</p>
+                </div>
+                <!-- Section Title Content End -->
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <!-- Services Item Start -->
+                <div class="service-item wow fadeInUp">
+                    <div class="icon-box">
+                        <img src="~/images/icon-services-1.svg" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h3>student visa</h3>
+                        <p>A visa is a conditional permission provided by a region to a foreigner to entry.</p>
+                    </div>
+                    <div class="service-btn">
+                        <a href="#" class="readmore-btn">learn more</a>
+                    </div>
+                </div>
+                <!-- Services Item End -->
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <!-- Services Item Start -->
+                <div class="service-item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="icon-box">
+                        <img src="~/images/icon-services-2.svg" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h3>tourists visa</h3>
+                        <p>A visa is a conditional permission provided by a region to a foreigner to entry.</p>
+                    </div>
+                    <div class="service-btn">
+                        <a href="#" class="readmore-btn">learn more</a>
+                    </div>
+                </div>
+                <!-- Services Item End -->
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <!-- Services Item Start -->
+                <div class="service-item wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="icon-box">
+                        <img src="~/images/icon-services-3.svg" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h3>business visa</h3>
+                        <p>A visa is a conditional permission provided by a region to a foreigner to entry.</p>
+                    </div>
+                    <div class="service-btn">
+                        <a href="#" class="readmore-btn">learn more</a>
+                    </div>
+                </div>
+                <!-- Services Item End -->
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <!-- Services Item Start -->
+                <div class="service-item wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="icon-box">
+                        <img src="~/images/icon-services-4.svg" alt="">
+                    </div>
+                    <div class="service-content">
+                        <h3>working visa</h3>
+                        <p>A visa is a conditional permission provided by a region to a foreigner to entry.</p>
+                    </div>
+                    <div class="service-btn">
+                        <a href="#" class="readmore-btn">learn more</a>
+                    </div>
+                </div>
+                <!-- Services Item End -->
+            </div>
+
+            <div class="col-lg-12">
+                <!-- Service Contact Text Start -->
+                <div class="service-contact-text wow fadeInUp" data-wow-delay="0.8s">
+                    <p>Need visa & immigration consultation? <a href="contact.html">contact now</a></p>
+                </div>
+                <!-- Service Contact Text End -->
+            </div>
+        </div>
+    </div>
+</div> *@

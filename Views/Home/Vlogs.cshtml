@@ -1,0 +1,341 @@
+﻿@using System.IO
+ 
+@using System.Text.Json
+@using System.Collections.Generic
+ 
+@inject IWebHostEnvironment Env
+@{
+    ViewData["Title"] = "Vlogs";
+}
+
+@{
+
+ 
+    var folder = System.IO.Path.Combine(
+            Directory.GetCurrentDirectory(),
+            "wwwroot",
+            "Gallery",
+            "images",
+            "Vlogs"
+            );
+
+    var images = Directory
+        .GetFiles(folder)
+        .Where(f =>
+      
+            f.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase) ||
+            f.EndsWith(".webp", StringComparison.OrdinalIgnoreCase))
+        .Select(f => System.IO.Path.GetFileName(f))
+        .OrderBy(f => f)
+        .ToList();
+}
+@* <script src="https://cdn.jsdelivr.net/npm/@@flaticon/flaticon-uicons@3.3.1/license.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+ 
+<link rel="stylesheet" href="~/Gallery/vendors/linericon/style.css">
+
+<link rel="stylesheet" href="~/Gallery/vendors/owl-carousel/oowl.theme.default.min.css">
+<link rel="stylesheet" href="~/Gallery/vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="~/Gallery/vendors/lightbox/simpleLightbox.css">
+<link rel="stylesheet" href="~/Gallery/css/responsive.css">
+<link rel="stylesheet" href="~/Gallery/css/style.css">
+
+<link rel="stylesheet" href="~/Gallery/css/font-awesome.min.css"> *@
+
+<script src="https://cdn.jsdelivr.net/npm/@@flaticon/flaticon-uicons@3.3.1/license.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@@flaticon/flaticon-uicons@3.3.1/css/all/all.min.css">
+<link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+@* <link rel="stylesheet" href="/css/style.css"> *@
+@* <link rel="stylesheet" href="/css/fonts.css"> *@
+<link rel="stylesheet" href="~/Gallery/vendors/linericon/style.css">
+
+<link rel="stylesheet" href="~/Gallery/vendors/owl-carousel/oowl.theme.default.min.css">
+<link rel="stylesheet" href="~/Gallery/vendors/owl-carousel/owl.carousel.min.css">
+<link rel="stylesheet" href="~/Gallery/vendors/lightbox/simpleLightbox.css">
+<link rel="stylesheet" href="~/Gallery/css/responsive.css">
+@* <link rel="stylesheet" href="~/Gallery/css/style.css"> *@
+
+<link rel="stylesheet" href="~/Gallery/css/font-awesome.min.css">
+<style>
+
+    .single-gallery-image {
+        margin-top: 30px;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+        background-size: cover !important;
+        height: 200px;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+    }
+
+        .single-gallery-image:hover {
+            opacity: .8;
+        }
+
+    .single-gallery-image {
+        margin-top: 30px;
+        background-repeat: no-repeat !important;
+        background-position: center center !important;
+        background-size: cover !important;
+        height: 200px;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+    }
+
+        .single-gallery-image:hover {
+            opacity: .8;
+        }
+
+    .gallery_item {
+        margin-bottom: 30px;
+    }
+
+        .gallery_item img {
+            max-width: 100%;
+        }
+
+        .gallery_item .gallery_img {
+            position: relative;
+        }
+
+            .gallery_item .gallery_img .hover {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                background: rgba(0, 0, 0, 0.5);
+                width: 100%;
+                text-align: center;
+                font-size: 24px;
+                height: 100%;
+                color: #fff;
+                -webkit-transition: all 300ms ease;
+                -o-transition: all 300ms ease;
+                transition: all 300ms ease;
+                opacity: 0;
+            }
+
+                .gallery_item .gallery_img .hover i {
+                    position: absolute;
+                    left: 0px;
+                    top: 50%;
+                    width: 100%;
+                    text-align: center;
+                    -webkit-transform: translateY(-50%);
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    color: #fff;
+                }
+
+            .gallery_item .gallery_img:hover .hover {
+                opacity: 1;
+            }
+
+</style>
+
+<style>
+    /* Reset and ensure full screen coverage */
+    .section-main-bunner-filter {
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden;
+        position: relative;
+    }
+
+        .section-main-bunner-filter .main-slider-carousel-2 {
+            height: 80vh;
+            min-height: 80vh;
+            width: 100%;
+            position: relative;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+            .section-main-bunner-filter .main-slider-carousel-2 .slide {
+                height: 100vh;
+                min-height: 100vh;
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .section-main-bunner-filter .main-slider-carousel-2 .main-bunner-img {
+                height: 100vh;
+                min-height: 100vh;
+                width: 100vw;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-size: cover !important;
+                background-position: center center !important;
+                background-repeat: no-repeat !important;
+            }
+
+            .section-main-bunner-filter .main-slider-carousel-2 .main-bunner-inner {
+                height: 100vh;
+                min-height: 100vh;
+                width: 100%;
+                position: relative;
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .section-main-bunner-filter .main-slider-carousel-2 .container {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            .section-main-bunner-filter .main-slider-carousel-2 .row {
+                width: 100%;
+                margin: 0;
+            }
+
+    /*     a:hover {
+                    text-decoration: none;
+                    outline: none;
+                    color: #16a34a;
+                } */
+
+    .team-classic-figure .team-classic-soc-list a:hover {
+        color: #ea580c;
+    }
+
+    .gallery_img {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9; /* pick the ratio your videos use */
+        overflow: hidden;
+        background: #000;
+    }
+
+        .gallery_img video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* fills the box, crops overflow */
+            display: block;
+        }
+</style>
+
+ 
+<!-- Page Header Start -->
+<div class="page-title-two page-header bg-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Page Header Box Start -->
+                <div class="page-header-box">
+                    <h1 class="text-anime-style-3" data-cursor="-opaque">Vlogs</h1>
+                    <nav class="wow fadeInUp" data-wow-delay="0.25s">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Inde"> home</a></li>
+                            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Gallery">Gallery</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Vlogs</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- Page Header Box End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<section style="padding-top:75px;" class="gallery_area section_gap">
+    <div class="container">
+        <div class="section_title text-center">
+            @*           <h2 class="title_color">Royal Hotel Gallery</h2>
+            <p>Who are in extremely love with eco friendly system.</p> *@
+        </div>
+        <div class="row imageGallery1" id="gallery">
+            @foreach (var image in images)
+            {
+                var url = Url.Content("~/Gallery/images/Vlogs/" + image);
+                var nameNoExt = System.IO.Path.GetFileNameWithoutExtension(image);
+
+                var posterFullPath = System.IO.Path.Combine(Env.WebRootPath,
+                    "Gallery", "images", "Vlogs", "posters", nameNoExt + ".jpg");
+                var hasPoster = System.IO.File.Exists(posterFullPath);
+                var posterUrl = hasPoster
+                    ? Url.Content("~/Gallery/images/Vlogs/posters/" + nameNoExt + ".jpg")
+                    : "";
+
+                <div class="col-md-4 gallery_item">
+                    <div class="gallery_img">
+                        <video src="@url"
+                               preload="none"
+                               controls
+                               playsinline
+                               muted
+                               poster="@posterUrl"
+                               class="video-native"></video>
+                    </div>
+                </div>
+            }
+            <div class="col-md-4 gallery_item">
+                <div class="gallery_img">
+                    <iframe src="https://www.youtube.com/embed/SpPUMvFMlnc"
+                            title="YouTube video"
+                            width="100%" height="100%"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen
+                            class="video-native">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="col-md-4 gallery_item">
+                <div class="gallery_img">
+                    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Xi69Lb57L90?si=9sAtr3SabpclYneH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Gallery/js/jquery-3.2.1.min.js"></script>
+<script src="~/Gallery/js/popper.js"></script>
+
+<script src="~/Gallery/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="~/Gallery/js/jquery.ajaxchimp.min.js"></script>
+<script src="~/Gallery/vendors/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="~/Gallery/vendors/nice-select/js/jquery.nice-select.js"></script>
+<script src="~/Gallery/js/mail-script.js"></script>
+<script src="~/Gallery/js/stellar.js"></script>
+<script src="~/Gallery/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="~/Gallery/vendors/isotope/isotope-min.js"></script>
+<script src="~/Gallery/js/stellar.js"></script>
+<script src="~/Gallery/vendors/lightbox/simpleLightbox.min.js"></script>
+<script src="~/Gallery/js/custom.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#figureCarousel').owlCarousel({
+            loop: true,           // infinite loop
+            margin: 0,            // no gap between items
+            nav: true,            // show next/prev arrows
+            dots: true,           // show dots
+            items: 1,             // ONLY ONE ITEM VISIBLE AT A TIME
+            autoplay: false,      // set to true if you want auto-slide
+            autoplayTimeout: 4000,
+            smartSpeed: 600,
+            navText: ['‹', '›'],  // simple arrow symbols
+            responsive: {
+                0: { items: 1 },
+                600: { items: 1 },
+                1000: { items: 1 }
+            }
+        });
+    });
+</script>

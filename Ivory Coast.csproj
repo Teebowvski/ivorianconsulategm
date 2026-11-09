@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-Ivory_Coast-00c02d71-667a-4659-a1d7-19d90aa9228e</UserSecretsId>
+    <RootNamespace>Ivory_Coast</RootNamespace>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
+    <EnableSdkContainerDebugging>True</EnableSdkContainerDebugging>
+    <ContainerBaseImage>mcr.microsoft.com/dotnet/aspnet:9.0-nanoserver-1809</ContainerBaseImage>
+    <DockerfileContext>.</DockerfileContext>
+    <ContainerRuntimeIdentifier>win-x64</ContainerRuntimeIdentifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNetCore.Honeypot" Version="1.4.1" />
+    <PackageReference Include="ErrorOr" Version="2.1.1" />
+    <PackageReference Include="MailKit" Version="4.18.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="9.0.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="9.0.18" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="9.0.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.18" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.18" />
+    <PackageReference Include="MimeKit" Version="4.18.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Gallery\images\Independence day 2024\" />
+    <Folder Include="wwwroot\Press\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ContainerPort Include="8081" />
+  </ItemGroup>
+
+</Project>

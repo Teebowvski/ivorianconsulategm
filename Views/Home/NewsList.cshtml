@@ -1,0 +1,96 @@
+﻿@using Ivory_Coast.ViewModels
+@model HomeViewModel
+@{
+    ViewData["Title"] = "Press Release";
+    var news = Model.NewsList;
+}
+
+
+
+<!-- Page Header Start -->
+<div class="page-header bg-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- Page Header Box Start -->
+                <div class="page-header-box">
+                    <h1 class="text-anime-style-3" data-cursor="-opaque">Press</h1>
+                    <nav class="wow fadeInUp" data-wow-delay="0.25s">
+                        <ol class="breadcrumb">
+                              <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">home</a></li>
+                            <li class="breadcrumb-item"><a href="#" class="disable disabled">Press & Events</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Press</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- Page Header Box End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Page Blog Start -->
+<div class="page-blog">
+    <div class="container">
+        <div class="row">
+            @foreach(var item in news)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <!-- Post Item Start -->
+                    <div class="post-item wow fadeInUp">
+                        <!-- Post Featured Image Start-->
+                        <div class="post-featured-image">
+                            <a asp-controller="Home" asp-action="News" asp-route-Id="@item.Id" data-cursor-text="View">
+                                <figure class="image-anime">
+                                    <img src="@item.Image" alt="">
+                                </figure>
+                            </a>
+                        </div>
+                        <!-- Post Featured Image End -->
+                        <!-- Post Item Body Start -->
+                        <div class="post-item-body">
+                            <!-- Post Item Content Start -->
+                            <div class="post-item-content">
+                                <h2><a asp-controller="Home" asp-action="News" asp-route-Id="@item.Id">@item.Title </a></h2>
+                            </div>
+                            <!-- Post Item Content End -->
+                            <!-- Post Item Button Start-->
+                            <div class="post-item-btn">
+                                <a asp-controller="Home" asp-action="News" asp-route-Id="@item.Id" class="readmore-btn">read more</a>
+                            </div>
+                            <!-- Post Item Button End-->
+                        </div>
+                        <!-- Post Item Body End -->
+                    </div>
+                    <!-- Post Item End -->
+                </div>
+            }
+
+
+ 
+
+            <div class="col-lg-4 col-md-6">
+                <!-- Post Item Start -->
+
+            </div>
+
+            <!-- Post Item End -->
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+
+            <!-- Post Featured Image End -->
+
+                        
+            <div class="col-lg-4 col-md-6">
+
+                   
+
+
+                <!-- Page Pagination End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Blog End -->
+<!-- Footer Start -->

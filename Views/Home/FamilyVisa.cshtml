@@ -1,0 +1,125 @@
+﻿@using Ivory_Coast.ViewModels
+@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Family Visa";
+}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <!-- Page Header Box Start -->
+                <div class="page-header-box">
+                    <h1 class="text-anime-style-3" data-cursor="-opaque">Family Visa</h1>
+                    <nav class="wow fadeInUp">
+                        <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">home</a></li>
+                                <li class="breadcrumb-item"><a asp-controller="Home" asp-action="services">services</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Family Visa</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- Page Header Box End -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="our-scrolling-ticker customer-benefit-ticker">
+    <div class="scrolling-ticker-box">
+        <div class="scrolling-content">
+            <span><img src="~/images/asterisk-icon.svg" alt="">Discover the Beauty and Rich Culture of Côte d'Ivoire</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Experience the Warm Hospitality of the Ivorian People</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Explore Abidjan, Beautiful Beaches and Scenic Landscapes</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Your Next Unforgettable Journey Begins in Côte d'Ivoire</span>
+        </div>
+
+        <div class="scrolling-content">
+            <span><img src="~/images/asterisk-icon.svg" alt="">Discover the Beauty and Rich Culture of Côte d'Ivoire</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Experience the Warm Hospitality of the Ivorian People</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Explore Abidjan, Beautiful Beaches and Scenic Landscapes</span>
+            <span><img src="~/images/asterisk-icon.svg" alt="">Your Next Unforgettable Journey Begins in Côte d'Ivoire</span>
+        </div>
+    </div>
+</div>
+<!-- Page Service Single Start -->
+<div class="page-service-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- Service Sidebar Start -->
+                <partial name="_VisaSideBar" />
+                <!-- Service Sidebar End -->
+            </div>
+
+            <div class="col-lg-8">
+                <!-- Service Single Content Start -->
+                <div class="service-single-content">
+
+                    <!-- Service Feature Image Start -->
+                    <div class="service-feature-image">
+                        <figure class="image-anime reveal">
+                            <img src="/img/Visa/family.jpg" alt="Family members together">
+                        </figure>
+                    </div>
+                    <!-- Service Feature Image End -->
+                    <!-- Service Entry Start -->
+                    <div class="service-entry">
+                        <p class="wow fadeInUp">
+                            Côte d’Ivoire welcomes visitors travelling to reunite with
+                            family members, visit relatives, or attend important family
+                            occasions. Individuals planning to travel to Côte d’Ivoire
+                            for family-related purposes should familiarise themselves
+                            with the applicable visa and entry requirements before
+                            making their travel arrangements.
+                        </p>
+
+                        <p class="wow fadeInUp" data-wow-delay="0.1s">
+                            The Honorary Consulate of the Republic of Côte d’Ivoire in
+                            The Gambia provides general information and guidance to
+                            individuals seeking information about family-related travel,
+                            including relevant documentation, application procedures,
+                            and consular requirements.
+                        </p>
+
+                        <!-- Service Entry List Image Start -->
+                        <div class="service-entry-list-image">
+                            <div class="service-feature-image col-lg-6">
+                                <figure class="image-anime reveal">
+                                    <img src="/img/Visa/family1.jpg" alt="Family travelling together">
+                                </figure>
+                            </div>
+
+                            <!-- Service Entry List Start -->
+                            <div class="service-entry-list wow fadeInUp col-lg-6" data-wow-delay="0.2s">
+                                <ul>
+                                    <li>Guidance on visa requirements for family visits</li>
+                                    <li>Information on documents required for visiting relatives</li>
+                                    <li>General guidance on family reunification procedures</li>
+                                    <li>Information on supporting documents and proof of relationship</li>
+                                    <li>Assistance with family-related travel enquiries</li>
+                                </ul>
+                            </div>
+                            <!-- Service Entry List End -->
+                        </div>
+                        <!-- Service Entry List Image End -->
+
+                        <p class="wow fadeInUp">
+                            Visa requirements and supporting documentation may vary
+                            depending on the applicant's nationality, relationship to
+                            the family member in Côte d’Ivoire, and purpose of travel.
+                            Applicants should confirm the latest requirements with
+                            the relevant Ivorian immigration or diplomatic authorities
+                            before submitting an application.
+                        </p>
+                    </div>
+                    <!-- Service Entry End -->
+
+                </div>
+                <partial name="_VisaInformation" />
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Service Single End -->

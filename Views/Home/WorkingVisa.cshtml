@@ -1,0 +1,113 @@
+﻿
+@using Ivory_Coast.ViewModels
+@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Working Visa";
+}
+
+<!-- Page Header Start -->
+<div class="page-header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <!-- Page Header Box Start -->
+                <div class="page-header-box">
+                    <h1 class="text-anime-style-3" data-cursor="-opaque">Working Visa</h1>
+                    <nav class="wow fadeInUp">
+                        <ol class="breadcrumb">
+                           <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">home</a></li>
+                            <li class="breadcrumb-item"><a href="/Services/Visa-Travel-Information">Visa &amp; Travel Information</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Working Visa</li>
+                        </ol>
+                    </nav>
+                </div>
+                <!-- Page Header Box End -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Page Service Single Start -->
+<div class="page-service-single">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <!-- Service Sidebar Start -->
+                <partial name="_VisaSideBar" />
+                <!-- Service Sidebar End -->
+            </div>
+
+            <div class="col-lg-8">
+                <!-- Service Single Content Start -->
+                <div class="service-single-content">
+
+                    <!-- Service Feature Image Start -->
+                    <div class="service-feature-image">
+                        <figure class="image-anime reveal">
+                            <img src="/img/Visa/working.jpg" alt="Professional working in Côte d’Ivoire">
+                        </figure>
+                    </div>
+                    <!-- Service Feature Image End -->
+                    <!-- Service Entry Start -->
+                    <div class="service-entry">
+                        <p class="wow fadeInUp">
+                            Côte d’Ivoire offers employment and professional opportunities
+                            across various sectors, attracting individuals seeking to work
+                            and develop their careers in the country. Foreign nationals
+                            intending to take up employment in Côte d’Ivoire should
+                            familiarise themselves with the applicable immigration,
+                            residence, and work authorisation requirements before
+                            commencing employment.
+                        </p>
+
+                        <p class="wow fadeInUp" data-wow-delay="0.1s">
+                            The Honorary Consulate of the Republic of Côte d’Ivoire in
+                            The Gambia provides general information and guidance to
+                            individuals planning to travel to Côte d’Ivoire for employment
+                            or professional engagements, including information on relevant
+                            consular procedures and documentation.
+                        </p>
+
+                        <!-- Service Entry List Image Start -->
+                        <div class="service-entry-list-image">
+
+                            <div class="service-feature-image col-lg-6">
+                                <figure class="image-anime reveal">
+                                    <img src="/img/Visa/working.jpg" alt="Employment and work authorisation documents">
+                                </figure>
+                            </div>
+
+                            <!-- Service Entry List Start -->
+                            <div class="service-entry-list wow fadeInUp col-lg-6" data-wow-delay="0.2s">
+                                <ul>
+                                    <li>Information on work-related visa and entry requirements</li>
+                                    <li>Guidance on employment documentation and supporting materials</li>
+                                    <li>Information on employer sponsorship and relevant procedures</li>
+                                    <li>General guidance on residence and work authorisation</li>
+                                    <li>Assistance with employment-related consular enquiries</li>
+                                </ul>
+                            </div>
+                            <!-- Service Entry List End -->
+
+                        </div>
+                        <!-- Service Entry List Image End -->
+
+                        <p class="wow fadeInUp">
+                            Foreign nationals should confirm the appropriate visa,
+                            residence, and work authorisation requirements with the
+                            relevant Ivorian immigration and labour authorities before
+                            travelling or accepting employment. Entry permission alone
+                            does not necessarily authorise a foreign national to work
+                            in Côte d’Ivoire.
+                        </p>
+                    </div>
+                    <!-- Service Entry End -->
+
+                </div>
+                <partial name="_VisaInformation" />
+            </div>
+        </div>
+    </div>
+</div>
+ 

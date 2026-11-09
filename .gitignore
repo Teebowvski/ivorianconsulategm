@@ -1,0 +1,7 @@
+﻿[Bb]in/
+[Oo]bj/
+.vs/
+wwwroot/Gallery/images/Vlogs/*.mp4
+wwwroot/Gallery/images/Vlogs/*.MP4
+ffmpeg.exe
+*.exe
